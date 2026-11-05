@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SWaT Middle School Night</title>
+<meta name="description" content="SWaT, Middle School Night at Bethel Christian Reformed Church in Waupun, WI. Every SWaT night this year.">
+<meta property="og:title" content="SWaT Middle School Night">
+<meta property="og:description" content="Every SWaT night this year at Bethel CRC, Waupun WI.">
+<meta property="og:url" content="https://swat.jasonruis.com/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2E9CC4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,600;0,700;1,600&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bethel-teal: #0B7AA0;
+    --bethel-blue: #46B1D5;
+    --bethel-green: #8DC63F;
+    --teal-dark: #085A76;
+    --teal-tint: #E2F0F5;
+    --blue-tint: #EDF7FB;
+    --green-dark: #5E8A26;
+    --green-tint: #F0F7E4;
+    --ink: #22333B;
+    --gray: #5C6B73;
+    --gray-light: #CBD5DA;
+    --paper: #FFFFFF;
+    --paper-warm: #F7F9FA;
+
+    --font-serif: "Source Serif 4", Georgia, serif;
+    --font-sans: "Open Sans", Helvetica, Arial, sans-serif;
+    --radius: 12px;
+    --shadow: 0 2px 10px rgba(11, 122, 160, 0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--paper-warm);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+  /* Header */
+  .hero {
+    background: linear-gradient(160deg, var(--teal-dark) 0%, var(--bethel-teal) 100%);
+    color: #fff;
+    padding: 48px 0 88px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+  .hero .eyebrow { color: var(--bethel-green); }
+  .hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(32px, 7vw, 48px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 6px 0 10px;
+  }
+  .hero p { font-size: 17px; max-width: 520px; color: rgba(255, 255, 255, 0.88); }
+
+  /* Next up */
+  .next {
+    margin-top: -56px;
+    background: var(--paper);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(8, 90, 118, 0.18);
+    padding: 24px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+  .next .eyebrow { color: var(--green-dark); margin-bottom: 4px; }
+  .date-block {
+    width: 84px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid var(--gray-light);
+    background: var(--paper);
+  }
+  .date-block .mon {
+    background: var(--bethel-teal);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 0;
+  }
+  .date-block .day {
+    font-family: var(--font-serif);
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--ink);
+    padding-top: 4px;
+  }
+  .date-block .dow {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray);
+    padding-bottom: 6px;
+  }
+  .next h2 {
+    font-family: var(--font-serif);
+    font-size: 26px;
+    line-height: 1.2;
+    color: var(--ink);
+  }
+  .next .meta { color: var(--gray); margin-top: 4px; }
+  .next .theme { font-style: italic; font-family: var(--font-serif); font-weight: 600; color: var(--bethel-teal); }
+
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0 0; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    background: var(--bethel-teal);
+    color: #fff;
+    transition: background 0.15s;
+  }
+  .btn:hover { background: var(--teal-dark); }
+
+  /* Sections */
+  section { margin-top: 48px; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+  .section-head h2 {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    color: var(--bethel-teal);
+  }
+  .section-head a { color: var(--bethel-teal); font-weight: 600; font-size: 14px; text-decoration: none; white-space: nowrap; }
+  .section-head a:hover { text-decoration: underline; }
+
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  /* Upcoming list */
+  .upcoming { list-style: none; }
+  .upcoming li {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 18px;
+    border-top: 1px solid var(--gray-light);
+  }
+  .upcoming li:first-child { border-top: 0; }
+  .upcoming .when { text-align: center; line-height: 1.15; }
+  .upcoming .when .m { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bethel-teal); }
+  .upcoming .when .d { font-family: var(--font-serif); font-size: 24px; font-weight: 700; }
+  .upcoming .when .w { font-size: 11px; color: var(--gray); font-weight: 600; }
+  .upcoming .what { font-weight: 700; }
+  .upcoming .sub { font-size: 14px; color: var(--gray); }
+
+  .pill {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .pill-1024 { background: var(--bethel-green); color: #1E3209; }
+  .pill-swat { background: var(--bethel-blue); color: #08303F; }
+  .pill-event { background: var(--teal-tint); color: var(--teal-dark); border: 1px solid var(--bethel-teal); }
+  .pill-activity { background: var(--green-tint); color: var(--green-dark); border: 1px solid var(--green-dark); }
+
+  /* Rhythm */
+  .rhythm { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .rhythm .card { padding: 20px; border-top: 5px solid var(--bethel-teal); }
+  .rhythm .card.r-1024 { border-top-color: var(--bethel-green); }
+  .rhythm .card.r-swat { border-top-color: var(--bethel-blue); }
+  .rhythm .card.r-activity { border-top-color: var(--green-dark); }
+  .rhythm h3 { font-family: var(--font-serif); font-size: 20px; margin-bottom: 2px; }
+  .rhythm .when { font-weight: 700; color: var(--bethel-teal); }
+  .rhythm p { color: var(--gray); font-size: 14px; margin-top: 8px; }
+  .swat-link { text-decoration: none; color: inherit; background: var(--blue-tint); transition: border-color 0.15s; }
+  .swat-link:hover { border-color: var(--bethel-blue); }
+  .swat-link .go { display: inline-block; margin-top: 10px; font-weight: 700; font-size: 14px; color: var(--bethel-teal); }
+
+  /* Series */
+  .series { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .series .card { padding: 22px; }
+  .series .eyebrow { color: var(--green-dark); }
+  .series h3 { font-family: var(--font-serif); font-size: 22px; color: var(--ink); margin: 2px 0 14px; }
+  .series ol { list-style: none; }
+  .series li {
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 7px 0;
+    font-size: 15px;
+  }
+  .series .num {
+    width: 26px; height: 26px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-serif); font-weight: 700; font-size: 13px;
+    background: var(--bethel-teal); color: #fff;
+  }
+  .series .swat .num { background: var(--bethel-blue); color: #08303F; }
+  .series .date { font-size: 13px; color: var(--gray); white-space: nowrap; }
+  .series li.past { color: var(--gray); }
+  .series li.past .num { background: var(--gray-light); color: var(--gray); }
+  .series li.is-next { font-weight: 700; }
+  .series li.is-next .date::after { content: " \2022  next"; color: var(--green-dark); font-weight: 700; }
+
+  footer {
+    margin: 56px 0 0;
+    padding: 28px 0 40px;
+    border-top: 1px solid var(--gray-light);
+    color: var(--gray);
+    font-size: 14px;
+  }
+
+  @media (max-width: 560px) {
+    .hero { padding: 36px 0 80px; }
+    .next { grid-template-columns: 1fr; gap: 14px; padding: 20px; }
+    .date-block { width: 72px; }
+    .next h2 { font-size: 22px; }
+    .actions .btn { width: 100%; }
+    .upcoming li { grid-template-columns: 52px 1fr; padding: 12px 14px; }
+    .upcoming .pill { grid-column: 2; justify-self: start; margin-top: -6px; }
+  }
+
+  /* SWaT accents */
+  .hero { background: linear-gradient(160deg, #0B5F80 0%, #2E9CC4 100%); }
+  .hero .eyebrow { color: #D6F0FA; }
+  .date-block .mon { background: var(--bethel-blue); color: #08303F; }
+  .next .eyebrow { color: var(--teal-dark); }
+  .btn.secondary { background: var(--paper); color: var(--bethel-teal); border: 1px solid var(--gray-light); }
+  .btn.secondary:hover { background: var(--blue-tint); }
+  .upcoming li { grid-template-columns: 64px 1fr; }
+  .series .num { background: var(--bethel-blue); color: #08303F; }
+  .notice { padding: 20px; color: var(--gray); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Bethel CRC &middot; Waupun, WI &middot; Middle School</div>
+    <h1>SWaT</h1>
+    <p>Middle School Night at Bethel, on the 2nd Wednesday of the month. This year we're asking why we believe what we believe.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="next" id="next" aria-live="polite"></div>
+
+  <div class="actions">
+    <a class="btn" href="https://byps.jasonruis.com/calendar/">See the full youth calendar</a>
+    <a class="btn secondary" href="https://byps.jasonruis.com/">High school: BYPS &rarr;</a>
+  </div>
+
+  <section>
+    <div class="section-head"><h2>SWaT nights this year</h2></div>
+    <ul class="upcoming card" id="upcoming"></ul>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>This year's series</h2></div>
+    <div class="series">
+      <div class="card">
+        <div class="eyebrow">SWaT &middot; 2026-2027</div>
+        <h3>Middle School Apologetics</h3>
+        <ol id="series-swat"></ol>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    SWaT Middle School Night &mdash; Bethel Christian Reformed Church, Waupun WI
+  </footer>
+</main>
+
+<!-- Dates come from the BYPS site, so one file keeps both sites current. -->
+<script src="https://byps.jasonruis.com/events.js"></script>
+<script>
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const LONG_DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // "SWaT (MS)" is the calendar's label for a regular night; show it as plain "SWaT" here.
+  const title = e => e.title === "SWaT (MS)" ? "SWaT" : e.title.replace(/^SWaT: /, "");
+
+  function relative(date) {
+    const days = Math.round((date - today) / 86400000);
+    if (days === 0) return "Tonight";
+    if (days === 1) return "Tomorrow";
+    if (days < 7) return `This ${LONG_DAYS[date.getDay()]}`;
+    return `In ${days} days`;
+  }
+
+  const next = document.getElementById("next");
+
+  if (typeof BYPS === "undefined") {
+    next.style.gridTemplateColumns = "1fr";
+    next.innerHTML = `<div><h2>Couldn't load the schedule.</h2><p class="meta">Try refreshing, or see the <a href="https://byps.jasonruis.com/calendar/">full calendar</a>.</p></div>`;
+    document.querySelectorAll("section").forEach(s => s.hidden = true);
+  } else {
+    // Leadership meetings stay on the full calendar but are left off this student-facing list.
+    const events = BYPS.upcoming(today, 20, ["swat"]).filter(e => !/Leadership/.test(e.title));
+
+    if (events.length === 0) {
+      next.style.gridTemplateColumns = "1fr";
+      next.innerHTML = `<div><div class="eyebrow">Season complete</div><h2>That's a wrap on 2026-2027.</h2><p class="meta">Thanks for a great year. See you in the fall.</p></div>`;
+      document.getElementById("upcoming").closest("section").hidden = true;
+    } else {
+      const e = events[0];
+      next.innerHTML = `
+        <div class="date-block" aria-hidden="true">
+          <div class="mon">${MONTHS[e.date.getMonth()]}</div>
+          <div class="day">${e.date.getDate()}</div>
+          <div class="dow">${DAYS[e.date.getDay()]}</div>
+        </div>
+        <div>
+          <div class="eyebrow">Next SWaT &middot; ${relative(e.date)}</div>
+          <h2>${esc(e.theme || title(e))}</h2>
+          <div class="meta">${LONG_DAYS[e.date.getDay()]}, ${MONTHS[e.date.getMonth()]} ${e.date.getDate()}${e.theme ? " &middot; SWaT" : ""}</div>
+        </div>`;
+
+      const rest = events.slice(1);
+      document.getElementById("upcoming").innerHTML = rest.length ? rest.map(e => `
+        <li>
+          <div class="when">
+            <div class="m">${MONTHS[e.date.getMonth()]}</div>
+            <div class="d">${e.date.getDate()}</div>
+            <div class="w">${DAYS[e.date.getDay()]}</div>
+          </div>
+          <div>
+            <div class="what">${esc(e.theme || title(e))}</div>
+            ${e.theme ? `<div class="sub">${esc(title(e))}</div>` : ""}
+          </div>
+        </li>`).join("") : `<li class="notice">That's the last one this season.</li>`;
+    }
+
+    const nextIndex = BYPS.swatSeries.findIndex(s => s.date >= today);
+    document.getElementById("series-swat").innerHTML = BYPS.swatSeries.map((s, i) => {
+      const cls = s.date < today ? "past" : (i === nextIndex ? "is-next" : "");
+      return `<li class="${cls}"><span class="num">${s.num}</span><span>${esc(s.title)}</span><span class="date">${MONTHS[s.date.getMonth()]} ${s.date.getDate()}</span></li>`;
+    }).join("");
+  }
+</script>
+</body>
+</html>
